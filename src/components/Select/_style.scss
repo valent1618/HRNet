@@ -1,0 +1,26 @@
+.select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  label {
+    white-space: nowrap;
+  }
+
+  select {
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color-text;
+    color: $color-text;
+    font-size: 1em;
+    text-overflow: ellipsis;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      color: black;
+    }
+  }
+}
