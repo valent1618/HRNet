@@ -1,0 +1,106 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: Montserrat, 'Roboto', sans-serif, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #799cc6; /* fallback for old browsers */
+  background-image: -webkit-linear-gradient(
+    135deg,
+    #dff997,
+    #beb294,
+    #91a188,
+    #799cc6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(
+    135deg,
+    #dff997,
+    #beb294,
+    #91a188,
+    #799cc6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400%;
+  animation: bg 20s ease-in-out infinite alternate;
+  color: $color-text;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// custom scrollbar
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: $radius;
+  background: rgba(225, 225, 225, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 225, 225, 0.4);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  max-height: calc(100vh - 300px);
+  max-width: 80%;
+
+  @media screen and (max-width: $break-mobile) {
+    max-width: 90%;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  background-color: rgba(200, 240, 161, 0.5);
+  border-radius: 20px;
+  padding: 15px 25px;
+  font-size: 1em;
+  color: $color-text;
+  transition: $transition;
+
+  &.errorButton {
+    background-color: red;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active,
+  &:focus-visible {
+    transform: scale(0.9);
+    outline: none;
+  }
+}
+
+.errorText {
+  transition: 0.4s;
+  color: red;
+  margin: 0;
+
+  &.hide {
+    display: none;
+  }
+}
