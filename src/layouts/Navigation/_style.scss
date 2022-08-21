@@ -1,0 +1,98 @@
+#Navigation {
+  cursor: pointer;
+  position: fixed;
+  height: 100vh;
+  background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.05), transparent);
+  display: flex;
+  justify-content: center;
+  transition: $transition;
+
+  &.hide {
+    display: none;
+  }
+
+  &.right {
+    right: 0;
+    background: linear-gradient(
+      0.25turn,
+      transparent,
+      rgba(255, 255, 255, 0.1)
+    );
+
+    .create {
+      display: none;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        0.25turn,
+        transparent,
+        rgba(255, 255, 255, 0.15)
+      );
+    }
+  }
+
+  &.left {
+    left: 0;
+    background: linear-gradient(
+      0.25turn,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+
+    .list {
+      display: none;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        0.25turn,
+        rgba(255, 255, 255, 0.15),
+        transparent
+      );
+    }
+  }
+
+  a {
+    height: 100%;
+    min-width: 10vw;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      border: 2px solid $color-text;
+      border-radius: 50%;
+      fill: $color-text;
+      filter: drop-shadow(0 0 3px $color-text);
+      transition: 0.4s;
+    }
+  }
+
+  &:hover {
+    svg {
+      filter: drop-shadow(0 0 7px $color-text);
+      transform: scale(1.1);
+    }
+  }
+
+  @media screen and (max-width: $break-tablet) {
+    height: auto;
+    top: 50px;
+
+    &.right,
+    &.right:hover,
+    &.left,
+    &.left:hover {
+      background: none;
+
+      a {
+        width: calc(50vw - 100px);
+      }
+    }
+  }
+}
