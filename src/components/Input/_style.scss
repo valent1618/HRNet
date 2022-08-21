@@ -1,0 +1,57 @@
+input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $color-text;
+  background: none;
+  color: $color-text;
+  font-size: large;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    white-space: nowrap;
+    color: $color-text;
+    transition: $transition;
+  }
+
+  input {
+    overflow: visible;
+    z-index: 1;
+    width: 100%;
+
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -1.5em;
+      transform: scale(0.9) translateX(-2px);
+    }
+
+    &:valid ~ label {
+      color: $color-primary;
+    }
+
+    &:invalid {
+      color: transparent;
+    }
+
+    &:invalid:focus {
+      color: $color-text;
+    }
+
+    &:focus:invalid ~ label {
+      color: red;
+    }
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  transform: translateY(-5px);
+  cursor: pointer;
+  filter: invert(1);
+}
