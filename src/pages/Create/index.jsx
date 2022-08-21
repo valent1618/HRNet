@@ -1,3 +1,5 @@
+import { useStore } from 'react-redux';
+
 import PATTERN_NAME from '../../utils/patternName';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
@@ -5,11 +7,19 @@ import Select from '../../components/Select';
 import STATES from '../../data/states';
 import DEPARTMENTS from '../../data/departments';
 
+import { createEmployee } from '../../features/employees';
+
 function Create() {
+  const store = useStore();
+
   return (
     <main id='Create'>
       <h2>Create Employee</h2>
-      <form id='create-employee' autoComplete='off'>
+      <form
+        id='create-employee'
+        autoComplete='off'
+        onSubmit={(e) => createEmployee(e, store)}
+      >
         <div className='flex-input'>
           <Input
             name='first-name'
