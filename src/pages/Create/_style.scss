@@ -43,28 +43,28 @@
 
     .input-container {
       flex-grow: 1;
-    }
 
-    #first-name,
-    #last-name {
-      flex-basis: 200px;
-    }
+      &.first-name,
+      &.last-name {
+        flex-basis: 200px;
+      }
 
-    #date-of-birth,
-    #start-date {
-      flex-basis: 150px;
-    }
+      &.date-of-birth,
+      &.start-date {
+        flex-basis: 150px;
+      }
 
-    #street {
-      flex-basis: 70%;
-    }
+      &.street {
+        flex-basis: 70%;
+      }
 
-    #city {
-      flex-basis: 180px;
-    }
+      &.city {
+        flex-basis: 180px;
+      }
 
-    #zip-code {
-      flex-basis: 80px;
+      &.zip-code {
+        flex-basis: 80px;
+      }
     }
 
     fieldset {
