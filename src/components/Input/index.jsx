@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 function Input({ name, label, type, pattern }) {
   return (
-    <div className='input-container' id={name}>
-      <input type={type} required pattern={pattern} />
+    <div className={`input-container ${name}`}>
+      <input id={name} type={type} required pattern={pattern} />
       <label htmlFor={name}>{label}</label>
     </div>
   );
