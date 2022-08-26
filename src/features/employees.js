@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import capitalizeFirstLetter from '../utils/capitalizeFirstLetter';
+import formatZipCode from '../utils/formatZipCode';
+import { openModal } from '../utils/handleModal';
+import getObjKey from '../utils/getObjKey';
+import STATES from '../data/states';
 
 const { actions, reducer } = createSlice({
   name: 'user',
@@ -20,7 +24,7 @@ const { actions, reducer } = createSlice({
 export const { add, remove } = actions;
 export default reducer;
 
-export function createEmployee(e, store) {
+export function createEmployee(e, store, setModalText) {
   e.preventDefault();
   const firstName = capitalizeFirstLetter(e.target[0].value);
   const lastName = capitalizeFirstLetter(e.target[1].value);
@@ -28,8 +32,8 @@ export function createEmployee(e, store) {
   const startDate = e.target[3].value;
   const street = e.target[5].value;
   const city = capitalizeFirstLetter(e.target[6].value);
-  const zipCode = e.target[7].value;
-  const state = e.target[8].value;
+  const zipCode = formatZipCode(e.target[7].value);
+  const state = getObjKey(STATES, e.target[8].value);
   const department = e.target[9].value;
 
   const employees = store.getState().employees;
@@ -42,19 +46,23 @@ export function createEmployee(e, store) {
   );
 
   if (alreadyExist) {
-    console.log('Employee already exist !');
+    setModalText('Employee already exist...');
   } else {
+    setModalText('Employee created !');
     const payload = {
       firstName,
       lastName,
-      dateBirth,
       startDate,
+      department,
+      dateBirth,
       street,
       city,
-      zipCode,
       state,
-      department,
+      zipCode,
     };
     store.dispatch(add(payload));
   }
+
+  e.target.reset();
+  openModal();
 }
