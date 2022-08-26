@@ -1,30 +1,20 @@
 #Create {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   h2 {
+    overflow: visible;
     z-index: 5;
     margin: 20px 0 -1.4em 0;
     max-width: 80%;
     border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    background-color: rgba(225, 225, 225, 0.2);
+    box-shadow: $shadow;
     padding: 15px 50px;
     text-align: center;
   }
 
   form {
-    overflow-y: scroll;
     min-width: 50vw;
     max-width: 700px;
-    border-radius: $radius;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    background-color: rgba(225, 225, 225, 0.2);
     padding: 75px 50px 30px 50px;
     display: flex;
     justify-content: space-between;
