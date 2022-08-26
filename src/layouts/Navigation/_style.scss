@@ -2,7 +2,7 @@
   cursor: pointer;
   position: fixed;
   height: 100vh;
-  background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(0.25turn, rgba(white, 0.05), transparent);
   display: flex;
   justify-content: center;
   transition: $transition;
@@ -13,43 +13,27 @@
 
   &.right {
     right: 0;
-    background: linear-gradient(
-      0.25turn,
-      transparent,
-      rgba(255, 255, 255, 0.1)
-    );
+    background: linear-gradient(0.25turn, transparent, rgba(white, 0.1));
 
     .create {
       display: none;
     }
 
     &:hover {
-      background: linear-gradient(
-        0.25turn,
-        transparent,
-        rgba(255, 255, 255, 0.15)
-      );
+      background: linear-gradient(0.25turn, transparent, rgba(white, 0.15));
     }
   }
 
   &.left {
     left: 0;
-    background: linear-gradient(
-      0.25turn,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
+    background: linear-gradient(0.25turn, rgba(white, 0.1), transparent);
 
     .list {
       display: none;
     }
 
     &:hover {
-      background: linear-gradient(
-        0.25turn,
-        rgba(255, 255, 255, 0.15),
-        transparent
-      );
+      background: linear-gradient(0.25turn, rgba(white, 0.15), transparent);
     }
   }
 
@@ -61,22 +45,27 @@
     justify-content: center;
     align-items: center;
 
-    svg {
+    div {
       width: 50px;
       height: 50px;
-      padding: 10px;
       border: 2px solid $color-text;
       border-radius: 50%;
-      fill: $color-text;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       filter: drop-shadow(0 0 3px $color-text);
-      transition: 0.4s;
+      transition: $transition;
+
+      svg {
+        fill: $color-text;
+      }
     }
   }
 
   &:hover {
-    svg {
+    div {
       filter: drop-shadow(0 0 7px $color-text);
-      transform: scale(1.1);
     }
   }
 
