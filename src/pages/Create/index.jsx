@@ -61,7 +61,7 @@ function Create() {
       </form>
       <Modal
         text={modalText}
-        link={{ path: '/list', text: 'View current employees' }}
+        links={[{ path: '/list', text: 'View current employees' }]}
       />
     </main>
   );
