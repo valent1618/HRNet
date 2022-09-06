@@ -12,7 +12,7 @@
   color: $color-text;
   text-align: center;
 
-  button {
+  .close {
     position: absolute;
     top: -1em;
     right: -1em;
@@ -28,12 +28,25 @@
   }
 
   h3 {
-    margin: 10px 0 25px 0;
+    margin: 15px 0;
     font-size: 1.5em;
   }
 
-  a {
-    color: $color-primary;
+  .actions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    a,
+    button {
+      margin-top: 15px;
+    }
+
+    a {
+      color: $color-primary;
+    }
   }
 
   &::backdrop {
