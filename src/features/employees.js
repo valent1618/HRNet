@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import capitalizeFirstLetter from '../utils/capitalizeFirstLetter';
 import formatZipCode from '../utils/formatZipCode';
-import { openModal } from '../utils/handleModal';
+import findEmployee from '../utils/findEmployee';
+import { openModal, closeModal } from '../utils/handleModal';
 import getObjKey from '../utils/getObjKey';
 import STATES from '../data/states';
 
@@ -24,6 +25,12 @@ const { actions, reducer } = createSlice({
 export const { add, remove } = actions;
 export default reducer;
 
+/**
+ * Adds an employee to the store if it does not already exist
+ * @param { Object } e Event of onSubmit
+ * @param { Object } store Redux store
+ * @param { Function } setModalText set of useState modalText
+ */
 export function createEmployee(e, store, setModalText) {
   e.preventDefault();
   const firstName = capitalizeFirstLetter(e.target[0].value);
@@ -37,15 +44,9 @@ export function createEmployee(e, store, setModalText) {
   const department = e.target[9].value;
 
   const employees = store.getState().employees;
+  const toFind = { firstName, lastName, dateBirth };
 
-  const alreadyExist = employees.find(
-    (employee) =>
-      employee.firstName === firstName &&
-      employee.lastName === lastName &&
-      employee.dateBirth === dateBirth
-  );
-
-  if (alreadyExist) {
+  if (findEmployee(employees, toFind)) {
     setModalText('Employee already exist...');
   } else {
     setModalText('Employee created !');
@@ -65,4 +66,18 @@ export function createEmployee(e, store, setModalText) {
 
   e.target.reset();
   openModal();
+}
+
+/**
+ * Remove employee of the store
+ * @param { {firstName: string, lastName: string, dateBirth: string} } toRemove
+ * @param { Object } store Redux store
+ */
+export function removeEmployee(toRemove, store) {
+  const employees = store.getState().employees;
+  const indexToRemove = employees.indexOf(findEmployee(employees, toRemove));
+
+  store.dispatch(remove(indexToRemove));
+
+  closeModal();
 }
