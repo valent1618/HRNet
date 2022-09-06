@@ -20,7 +20,12 @@
     &:focus,
     &:focus-visible {
       outline: none;
-      color: black;
+      color: $color-primary;
+    }
+
+    option {
+      background-color: $color-bg;
+      color: white;
     }
   }
 }
