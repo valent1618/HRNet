@@ -2,6 +2,12 @@ import PropTypes from 'prop-types';
 
 import capitalizeFirstLetter from '../../utils/capitalizeFirstLetter';
 
+/**
+ * Custom select
+ * @component
+ * @param { {name: string, options: Array} } Props
+ * @returns
+ */
 function Select({ name, options }) {
   return (
     <div className='select' id={name}>

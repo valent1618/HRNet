@@ -1,3 +1,6 @@
+/**
+ * List of US states full name and abbreviations
+ */
 const STATES = {
   AL: 'Alabama',
   AK: 'Alaska',

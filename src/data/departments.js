@@ -1,3 +1,6 @@
+/**
+ * List of Wealth Health departments
+ */
 const DEPARTMENTS = [
   'Sales',
   'Marketing',

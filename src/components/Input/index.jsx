@@ -1,5 +1,11 @@
 import PropTypes from 'prop-types';
 
+/**
+ * Custom input that shows you if it is valid or not
+ * @component
+ * @param { {name: string, label: string, type: ('date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'), pattern: string, minLength: 3, maxLength: 50, min: 0, max: 1000000} } Props
+ * @returns
+ */
 function Input({
   name,
   label,

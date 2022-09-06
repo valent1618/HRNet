@@ -1,3 +1,6 @@
+/**
+ * List of headers needed for the employee table
+ */
 const tableHeader = [
   'First Name',
   'Last Name',
