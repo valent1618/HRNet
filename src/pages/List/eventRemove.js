@@ -13,7 +13,7 @@ function eventRemove(setToRemove) {
         setToRemove({
           firstName: tds[0].textContent,
           lastName: tds[1].textContent,
-          dateBirth: tds[4].textContent,
+          birthDate: tds[4].textContent,
         });
         openModal();
       });
