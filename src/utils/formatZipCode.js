@@ -1,5 +1,5 @@
 /**
- * Add 0 if zip code length is not 5
+ * Add 0 if zip code length is inferior to 5
  * @param { number } code
  * @returns
  */
