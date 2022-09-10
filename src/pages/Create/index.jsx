@@ -22,19 +22,22 @@ function Create() {
         id='create-employee'
         onSubmit={(e) => createEmployee(e, store, setModalText)}
         className='glass-container'
+        data-testid='form'
       >
         <div className='flex-input'>
           <Input
             name='first-name'
             label='First Name'
             type='text'
-            pattern={PATTERN_NAME}
+            pattern={PATTERN_NAME.regex}
+            errorMessage={PATTERN_NAME.message}
           />
           <Input
             name='last-name'
             label='Last Name'
             type='text'
-            pattern={PATTERN_NAME}
+            pattern={PATTERN_NAME.regex}
+            errorMessage={PATTERN_NAME.message}
           />
         </div>
 
