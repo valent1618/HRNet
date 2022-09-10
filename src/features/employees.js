@@ -8,7 +8,7 @@ import getObjKey from '../utils/getObjKey';
 import STATES from '../data/states';
 
 const { actions, reducer } = createSlice({
-  name: 'user',
+  name: 'employees',
   initialState: [],
   reducers: {
     add: (state, action) => {
@@ -35,7 +35,7 @@ export function createEmployee(e, store, setModalText) {
   e.preventDefault();
   const firstName = capitalizeFirstLetter(e.target[0].value);
   const lastName = capitalizeFirstLetter(e.target[1].value);
-  const dateBirth = e.target[2].value;
+  const birthDate = e.target[2].value;
   const startDate = e.target[3].value;
   const street = e.target[5].value;
   const city = capitalizeFirstLetter(e.target[6].value);
@@ -44,7 +44,7 @@ export function createEmployee(e, store, setModalText) {
   const department = e.target[9].value;
 
   const employees = store.getState().employees;
-  const toFind = { firstName, lastName, dateBirth };
+  const toFind = { firstName, lastName, birthDate };
 
   if (findEmployee(employees, toFind)) {
     setModalText('Employee already exist...');
@@ -55,7 +55,7 @@ export function createEmployee(e, store, setModalText) {
       lastName,
       startDate,
       department,
-      dateBirth,
+      birthDate,
       street,
       city,
       state,
@@ -70,7 +70,7 @@ export function createEmployee(e, store, setModalText) {
 
 /**
  * Remove employee of the store
- * @param { {firstName: string, lastName: string, dateBirth: string} } toRemove
+ * @param { {firstName: string, lastName: string, birthDate: string} } toRemove
  * @param { Object } store Redux store
  */
 export function removeEmployee(toRemove, store) {
