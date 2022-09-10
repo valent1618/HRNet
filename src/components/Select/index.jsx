@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import capitalizeFirstLetter from '../../utils/capitalizeFirstLetter';
 
 /**
- * Custom select
+ * Custom select, label is by default same as name with an uppercase first letter
  * @component
- * @param { {name: string, options: Array} } Props
+ * @param { {name: string, label: string, options: Array} } Props
  * @returns
  */
-function Select({ name, options }) {
+function Select({ name, label = name, options }) {
   return (
     <div className='select' id={name}>
-      <label htmlFor={name}>{capitalizeFirstLetter(name)} :</label>
-      <select name={name}>
+      <label htmlFor={name}>{capitalizeFirstLetter(label)} :</label>
+      <select name={name} data-testid='select'>
         {options.map((option) => (
           <option key={name + option}>{option}</option>
         ))}
