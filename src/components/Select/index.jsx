@@ -12,7 +12,7 @@ function Select({ name, label = name, options }) {
   return (
     <div className='select' id={name}>
       <label htmlFor={name}>{capitalizeFirstLetter(label)} :</label>
-      <select name={name} data-testid='select'>
+      <select id={name} name={name} data-testid='select'>
         {options.map((option) => (
           <option key={name + option}>{option}</option>
         ))}
