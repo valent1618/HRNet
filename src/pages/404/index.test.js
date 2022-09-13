@@ -15,6 +15,6 @@ describe('Error404 page', () => {
     expect(main).toHaveTextContent('Page Not Found');
   });
   it('Should have a link to create page', () => {
-    expect(link).toHaveAttribute('href', '/create');
+    expect(link).toHaveAttribute('href', '/HRNet/create');
   });
 });

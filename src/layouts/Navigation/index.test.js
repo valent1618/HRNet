@@ -14,12 +14,12 @@ describe('Navigation', () => {
     expect(nav).toHaveClass('hide');
   });
   it('Should display right link when location is create', () => {
-    setup('/create');
+    setup('/HRNet/create');
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveClass('right');
   });
   it('Should display left link when location is list', () => {
-    setup('/list');
+    setup('/HRNet/list');
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveClass('left');
   });
