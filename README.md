@@ -9,7 +9,7 @@ Coded with React, and store data in Redux.
 
 ### Demo
 
-<https://valent1618.github.io/HRNet/>
+<https://valent1618.github.io/HRNet/create>
 
 ## Getting Started
 
