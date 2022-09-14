@@ -14,11 +14,12 @@ const setup = (label) => {
 };
 
 describe('Select component', () => {
-  it('Should have "Test :" for label and "test" for select name', () => {
+  it('Should have "Test :" for label and "test" for select id and name', () => {
     setup();
     const label = screen.getByText('Test :');
     const select = screen.getByTestId('select');
     expect(label).toHaveTextContent('Test :');
+    expect(select).toHaveAttribute('id', 'test');
     expect(select).toHaveAttribute('name', 'test');
   });
   it('Should have a different label with an uppercase first letter', () => {

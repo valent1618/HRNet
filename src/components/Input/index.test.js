@@ -34,9 +34,10 @@ describe('Input text component', () => {
   it('Should be of type text', () => {
     expect(input).toHaveAttribute('type', 'text');
   });
-  it('Should have "test" in container classList and input id', () => {
+  it('Should have "test" in container classList and input id and name', () => {
     expect(container.classList).toContain('test');
-    expect(input.id).toEqual('test');
+    expect(input).toHaveAttribute('id', 'test');
+    expect(input).toHaveAttribute('name', 'test');
   });
   it('Should have "testInput" for label', () => {
     expect(label).toHaveTextContent('testInput');
