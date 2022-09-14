@@ -10,7 +10,7 @@ import capitalizeFirstLetter from '../../utils/capitalizeFirstLetter';
  */
 function Select({ name, label = name, options }) {
   return (
-    <div className='select' id={name}>
+    <div className='select'>
       <label htmlFor={name}>{capitalizeFirstLetter(label)} :</label>
       <select id={name} name={name} data-testid='select'>
         {options.map((option) => (
