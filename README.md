@@ -17,6 +17,8 @@ Coded with React, and store data in Redux.
 
 You need **NodeJs and NPM**
 
+This app uses plaid-table, you can find more information on : <https://www.npmjs.com/package/plaid-table>
+
 ### Installing
 
 1. **Clone this repo** with the command
