@@ -7,6 +7,7 @@ import getObjKey from './getObjKey';
 describe('Utils functions', () => {
   it('Should capitalize the first letter of a string', () => {
     expect(capitalizeFirstLetter('test string')).toBe('Test string');
+    expect(capitalizeFirstLetter('TEST STRING')).toBe('Test string');
   });
   it('Should find the employee', () => {
     const employees = [payloadTest, payloadTest2];
