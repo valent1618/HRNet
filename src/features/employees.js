@@ -37,7 +37,7 @@ export function createEmployee(e, store, setModalText) {
   const lastName = capitalizeFirstLetter(e.target[1].value);
   const birthDate = e.target[2].value;
   const startDate = e.target[3].value;
-  const street = e.target[5].value;
+  const street = capitalizeFirstLetter(e.target[5].value);
   const city = capitalizeFirstLetter(e.target[6].value);
   const zipCode = formatZipCode(e.target[7].value);
   const state = getObjKey(STATES, e.target[8].value);
