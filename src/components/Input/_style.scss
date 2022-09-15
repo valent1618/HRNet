@@ -69,6 +69,10 @@ input:-webkit-autofill {
   appearance: none;
   -webkit-text-fill-color: $color-text;
   transition: background-color 10000s;
+
+  &:invalid {
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 input[type='search']::-webkit-search-cancel-button {
