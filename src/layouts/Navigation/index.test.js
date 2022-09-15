@@ -14,7 +14,7 @@ describe('Navigation', () => {
     expect(nav).toHaveClass('hide');
   });
   it('Should display right link when location is create', () => {
-    setup('/HRNet/create');
+    setup('/HRNet/');
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveClass('right');
   });

@@ -8,7 +8,7 @@ function Error404() {
         Error <span>404</span>
       </h1>
       <h2>Page Not Found</h2>
-      <Link to='/HRNet/create'>Return to create page</Link>
+      <Link to='/HRNet/'>Return to create page</Link>
     </main>
   );
 }

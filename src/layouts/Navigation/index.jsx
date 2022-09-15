@@ -7,7 +7,7 @@ function Navigation() {
     <nav
       id='Navigation'
       className={
-        location === '/HRNet/create'
+        location === '/HRNet/'
           ? 'right'
           : location === '/HRNet/list'
           ? 'left'
@@ -27,7 +27,7 @@ function Navigation() {
         </div>
       </Link>
       <Link
-        to='/HRNet/create'
+        to='/HRNet/'
         className='create'
         aria-label='Create an employee'
         data-testid='create-link'

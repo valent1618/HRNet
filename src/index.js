@@ -26,7 +26,7 @@ root.render(
         <Header />
         <Navigation />
         <Routes>
-          <Route path='/HRNet/create' element={<Create />} />
+          <Route path='/HRNet/' element={<Create />} />
           <Route path='/HRNet/list' element={<List />} />
           <Route path='/HRNet/*' element={<Error404 />} />
         </Routes>
