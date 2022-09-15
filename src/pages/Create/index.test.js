@@ -14,6 +14,23 @@ describe('Create page form', () => {
     const main = screen.getByRole('main');
     expect(main).toHaveTextContent('Create Employee');
   });
+  it('Should have invalid input name and date with a wrong value', () => {
+    setup();
+    const firstName = screen.getAllByRole('textbox')[0];
+    fireEvent.change(firstName, { target: { value: 'zsdq@efzd)' } });
+    // firstName need to match '[A-zÜ-ü]{2,24}([ -]{1}[A-zÜ-ü]{1,24})?'
+    expect(firstName).toBeInvalid();
+
+    const birthDate = screen.getByLabelText('Date of Birth');
+    fireEvent.change(birthDate, { target: { value: '1897-02-12' } });
+    // birthDate must be at least the year 1900
+    expect(birthDate).toBeInvalid();
+
+    const startDate = screen.getByLabelText('Start Date');
+    fireEvent.change(startDate, { target: { value: '2019-08-20' } });
+    // birthDate must be at least the year 2020
+    expect(startDate).toBeInvalid();
+  });
   it('Should not be valid when is not complete', () => {
     setup();
     const inputs = screen.getAllByTestId('input');
