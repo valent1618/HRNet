@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /**
  * Custom input that shows you if it is valid or not
  * @component
- * @param { {name: string, label: string, type: ('date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'), required: true, pattern: string, errorMessage: string, minLength: 3, maxLength: 50, min: 0, max: 1000000} } Props
+ * @param { {name: string, label: string, type: ('date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'), required: true, pattern: string, errorMessage: string, minLength: (number | string), maxLength: (number | string), min: (number | string), max: (number | string)} } Props
  * @returns
  */
 function Input({
@@ -13,11 +13,13 @@ function Input({
   required = true,
   pattern,
   errorMessage,
-  minLength = 3,
-  maxLength = 50,
-  min = 0,
-  max = 1000000,
+  minLength,
+  maxLength,
+  min,
+  max,
 }) {
+  const typesString = ['email', 'password', 'search', 'tel', 'text', 'url'];
+
   return (
     <div className={`input-container ${name}`} data-testid='container'>
       <input
@@ -26,10 +28,10 @@ function Input({
         type={type}
         required={required}
         pattern={pattern}
-        minLength={minLength}
-        maxLength={maxLength}
-        min={type === 'number' ? min : undefined}
-        max={type === 'number' ? max : undefined}
+        minLength={typesString.includes(type) ? minLength : undefined}
+        maxLength={typesString.includes(type) ? maxLength : undefined}
+        min={!typesString.includes(type) ? min : undefined}
+        max={!typesString.includes(type) ? max : undefined}
         data-testid='input'
         onInvalid={
           errorMessage
@@ -71,6 +73,6 @@ Input.propTypes = {
   errorMessage: PropTypes.string,
   minLength: PropTypes.number,
   maxLength: PropTypes.number,
-  min: PropTypes.number,
-  max: PropTypes.number,
+  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

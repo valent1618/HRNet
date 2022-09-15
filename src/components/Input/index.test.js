@@ -49,6 +49,10 @@ describe('Input text component', () => {
     expect(input.value).toBe('');
     expect(input).toBeInvalid();
   });
+  it('Should not have attribute min or max when the type is text', () => {
+    expect(input).not.toHaveAttribute('min');
+    expect(input).not.toHaveAttribute('max');
+  });
 });
 
 describe('Input text component event', () => {
@@ -58,12 +62,6 @@ describe('Input text component event', () => {
     fireEvent.change(input, { target: { value: 'abcde' } });
     expect(input.value).toBe('abcde');
     expect(input).toBeValid();
-  });
-  it('Should not have attribute min or max when the type is not number', () => {
-    setup();
-    const input = screen.getByTestId('input');
-    expect(input).not.toHaveAttribute('min');
-    expect(input).not.toHaveAttribute('max');
   });
   it('Should set custom validity message on invalid and nothing on input', () => {
     setup();
@@ -81,6 +79,12 @@ describe('Input number component', () => {
     setupNumber();
     const input = screen.getByTestId('input');
     expect(input).toHaveAttribute('type', 'number');
+  });
+  it('Should not have attribute minLength or maxLength when the type is number', () => {
+    setupNumber();
+    const input = screen.getByTestId('input');
+    expect(input).not.toHaveAttribute('minLength');
+    expect(input).not.toHaveAttribute('maxLength');
   });
   it('Should be valid when value is between -5 and 10', () => {
     setupNumber();
