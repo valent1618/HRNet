@@ -26,6 +26,7 @@ describe('List page table', () => {
   it('Should display employees', () => {
     setup(payloads);
     const table = screen.getByRole('table');
+    expect(table).not.toHaveTextContent('No data');
     expect(table).toHaveTextContent('Valentin');
     expect(table).toHaveTextContent('Marie');
   });
