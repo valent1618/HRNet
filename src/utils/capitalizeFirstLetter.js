@@ -1,11 +1,18 @@
 /**
- * Capitalize the first letter of a string
+ * Capitalize the first letter of each word in a string
  * @param { string } string
  * @returns { string }
  */
 function capitalizeFirstLetter(string) {
   const lowerString = string.toLowerCase();
-  return lowerString.charAt(0).toUpperCase() + lowerString.slice(1);
+  const chars = lowerString.split('');
+  chars[0] = chars[0].toUpperCase();
+  for (let i = 1; i < chars.length; i++) {
+    if (chars[i - 1] === ' ' || chars[i - 1] === '-') {
+      chars[i] = chars[i].toUpperCase();
+    }
+  }
+  return chars.join('');
 }
 
 export default capitalizeFirstLetter;

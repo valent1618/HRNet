@@ -24,8 +24,8 @@ describe('Select component', () => {
   });
   it('Should have a different label with an uppercase first letter', () => {
     setup('other label');
-    const label = screen.getByText('Other label :');
-    expect(label).toHaveTextContent('Other label :');
+    const label = screen.getByText('Other Label :');
+    expect(label).toHaveTextContent('Other Label :');
   });
   it('Should have all the options', () => {
     setup();

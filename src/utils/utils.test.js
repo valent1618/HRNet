@@ -5,9 +5,9 @@ import formatZipCode from './formatZipCode';
 import getObjKey from './getObjKey';
 
 describe('Utils functions', () => {
-  it('Should capitalize the first letter of a string', () => {
-    expect(capitalizeFirstLetter('test string')).toBe('Test string');
-    expect(capitalizeFirstLetter('TEST STRING')).toBe('Test string');
+  it('Should capitalize the first letter of each word in a string', () => {
+    expect(capitalizeFirstLetter('test-string')).toBe('Test-String');
+    expect(capitalizeFirstLetter('TEST STRING')).toBe('Test String');
   });
   it('Should find the employee', () => {
     const employees = [payloadTest, payloadTest2];
