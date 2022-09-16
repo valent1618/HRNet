@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/HRNet/static/css/main.74d5e126.css",
+    "main.js": "/HRNet/static/js/main.1dcf7b91.js",
+    "static/js/787.a603b31f.chunk.js": "/HRNet/static/js/787.a603b31f.chunk.js",
+    "static/media/logo.png": "/HRNet/static/media/logo.87cd9e2c145a26fd82d4.png",
+    "index.html": "/HRNet/index.html",
+    "main.74d5e126.css.map": "/HRNet/static/css/main.74d5e126.css.map",
+    "main.1dcf7b91.js.map": "/HRNet/static/js/main.1dcf7b91.js.map",
+    "787.a603b31f.chunk.js.map": "/HRNet/static/js/787.a603b31f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74d5e126.css",
+    "static/js/main.1dcf7b91.js"
+  ]
+}
