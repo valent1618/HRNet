@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 function Error404() {
   return (
     <main id='Error404'>
-      <p className='deco404'>404</p>
+      <p className='deco404' aria-hidden='true'>
+        404
+      </p>
       <h1>
         Error <span>404</span>
       </h1>
