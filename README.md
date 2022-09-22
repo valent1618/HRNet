@@ -3,7 +3,9 @@
 ## Description
 
 HRNet is an internal web application of the fake society WealthHealth which allows you to manage employee.
+
 Coded with React, and store data in Redux.
+Test with Jest.
 
 > This is the fourteenth project of the formation "Développeur d'application - JavaScript React" - OpenClassrooms
 
@@ -14,6 +16,18 @@ Coded with React, and store data in Redux.
 ## Getting Started
 
 ### Dependencies
+
+"@reduxjs/toolkit": "^1.8.4",
+"@testing-library/jest-dom": "^5.16.5",
+"@testing-library/react": "^13.3.0",
+"@testing-library/user-event": "^13.5.0",
+"plaid-table": "^1.1.2",
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+"react-redux": "^8.0.2",
+"react-router-dom": "^6.3.0",
+"react-scripts": "5.0.1",
+"sass": "^1.54.4",
 
 You need **NodeJs and NPM**
 
