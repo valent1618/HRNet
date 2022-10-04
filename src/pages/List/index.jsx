@@ -3,7 +3,7 @@ import { employees } from '../../app/selectors';
 import { useState, useEffect } from 'react';
 
 import tableHeader from '../../data/tableHeader';
-import Table from 'plaid-table';
+import { Table } from 'plaid-components';
 import Modal from '../../components/Modal';
 
 import eventRemove from './eventRemove';

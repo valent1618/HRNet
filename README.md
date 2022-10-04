@@ -17,21 +17,22 @@ Test with Jest.
 
 ### Dependencies
 
-"@reduxjs/toolkit": "^1.8.4",
-"@testing-library/jest-dom": "^5.16.5",
-"@testing-library/react": "^13.3.0",
-"@testing-library/user-event": "^13.5.0",
-"plaid-table": "^1.1.2",
-"react": "^18.2.0",
-"react-dom": "^18.2.0",
-"react-redux": "^8.0.2",
-"react-router-dom": "^6.3.0",
-"react-scripts": "5.0.1",
-"sass": "^1.54.4",
+- @reduxjs/toolkit: ^1.8.4
+- @testing-library/jest-dom: ^5.16.5
+- @testing-library/react: ^13.3.0
+- @testing-library/user-event: ^13.5.0
+- plaid-components: ^1.1.3
+- react: ^18.2.0
+- react-dom: ^18.2.0
+- react-redux: ^8.0.2
+- react-router-dom: ^6.3.0
+- react-scripts: 5.0.1
+- sass: ^1.54.4
+- web-vitals: ^2.1.4
 
 You need **NodeJs and NPM**
 
-This app uses plaid-table, you can find more information on : <https://www.npmjs.com/package/plaid-table>
+This app uses plaid-components, you can find more information on : <https://www.npmjs.com/package/plaid-components>
 
 ### Installing
 
